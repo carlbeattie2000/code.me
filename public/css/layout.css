@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Kufam', sans-serif;
+}
+
+.home-feed {
+  background-color: #121212;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+}
+
+.home-feed nav {
+  height: 100vh;
+}
+
+.home-feed main {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 3fr;
+      grid-template-rows: 1fr 3fr;
+  border-right: 1px solid rgba(255, 255, 255, 0.247);
+  border-left: 1px solid rgba(255, 255, 255, 0.247);
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.home-feed main::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+.home-feed aside {
+  height: 100vh;
+}
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,291 @@
+.post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  margin: 1em 2em;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.post .poster-details {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
+  width: 500px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+.post .poster-details .poster-profile-pic img {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
+
+.post .poster-details .poster-profile-details {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: 30px;
+}
+
+.post .poster-details .poster-profile-details p {
+  color: #fff;
+}
+
+.post .poster-details .poster-profile-details .poster-username {
+  font-weight: bold;
+}
+
+.post .post-content p {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 'Abel', sans-serif;
+}
+
+.post .post-uploaded-time {
+  padding: 1em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.247);
+}
+
+.post .post-uploaded-time p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.post .post-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  padding: 1em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.247);
+}
+
+.post .post-stats p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.post .post-stats .grayed {
+  font-weight: lighter;
+  color: #6b6b6b;
+}
+
+.post .post-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  padding: 1em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.247);
+}
+
+.post .post-actions button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.post .post-actions button:hover {
+  color: #BB86FC;
+}
+
+.post .user-reply-box {
+  margin: 1em 0;
+  padding: 1em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.247);
+}
+
+.post .user-reply-box .user-reply-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 6fr;
+      grid-template-columns: 1fr 6fr;
+}
+
+.post .user-reply-box .user-reply-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.post .user-reply-box .user-reply-container textarea {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+  resize: none;
+  padding-bottom: 1.5em;
+  height: 43px;
+  max-height: 150px;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.post .user-reply-box .user-reply-container textarea::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+.post .user-reply-box .user-reply-container textarea:focus {
+  outline: none;
+}
+
+.post .user-reply-box .user-reply-actions {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+}
+
+.post .user-reply-box .user-reply-actions .upload-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: flex-start;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.post .user-reply-box .user-reply-actions .upload-actions button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.1em;
+  cursor: pointer;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.post .user-reply-box .user-reply-actions .upload-actions button:hover {
+  color: #BB86FC;
+}
+
+.post .user-reply-box .user-reply-actions .user-reply-send {
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+.post .user-reply-box .user-reply-actions .user-reply-send button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: .4em;
+  border-radius: 1em;
+  -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.post .user-reply-box .user-reply-actions .user-reply-send button:hover {
+  background-color: #BB86FC;
+  color: #fff;
+}
+
+.post .reply {
+  display: -ms-grid;
+  display: grid;
+  margin: 1em 0;
+  padding: .5em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.247);
+}
+
+.post .reply .replier-profile-details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 6rem 8em 6em 4em;
+      grid-template-columns: 6rem 8em 6em 4em;
+}
+
+.post .reply .replier-profile-details img {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+}
+
+.post .reply .replier-profile-details p {
+  color: #FFF;
+}
+
+.post .reply .replier-profile-details .replier-username {
+  font-weight: bold;
+}
+
+.post .reply .reply-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[11];
+      grid-template-columns: repeat(11, 1fr);
+  margin: .3em 0;
+  row-gap: 20px;
+}
+
+.post .reply .reply-content p {
+  color: #fff;
+  font-family: 'Abel', sans-serif;
+  font-size: 1.4em;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 9;
+  grid-column: 2 / 11;
+}
+
+.post .reply .reply-content .reply-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 9;
+  grid-column: 2 / 11;
+}
+
+.post .reply .reply-content .reply-actions button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+.post .reply .reply-content .reply-actions button:hover {
+  color: #BB86FC;
+}
+
+.post::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+/*# sourceMappingURL=style.css.map */

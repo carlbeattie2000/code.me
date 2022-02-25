@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code.me - Social media platform, built for developers.</title>
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/profile_feed/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="home-feed">
+  <nav>
+    <ul>
+      <a href="./"><img src="../img/own_logo/dark_mode_logo.png" alt="logo for code.me" class="nav-logo"></a>
+      <li><a href="./"><span class="nav-icon"><i class="fa-solid fa-house"></i></span>Home</a></li>
+      <li><a href="/explore"><span class="nav-icon"><i class="fa-solid fa-arrow-right-long"></i></span>Explore</a></li>
+      <li><a href="/profile"><span class="nav-icon"><i class="fa-solid fa-user"></i></span></i>Profile</a></li>
+      <li><button>Post</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="post-something">
+        <div class="post-content">
+          <div class="profile-image">
+            <img src="../img/test/profile-pic-test.jpg" alt="profile-pic">
+          </div>
+          <div class="text-box">
+            <textarea placeholder="What's on your mind?" oninput="auto_grow(this)"></textarea>
+          </div>
+        </div>
+
+        <div class="posting-actions">
+          <div class="upload-icons">
+            <button id="post_upload_image"><i class="fa-solid fa-image fa-lg"></i></button>
+            <button id="post_upload_file"><i class="fa-solid fa-file-arrow-up fa-lg"></i></button>
+            <button id="post_upload_code"><i class="fa-solid fa-code fa-lg"></i></button>
+          </div>
+
+          <div class="post-content-button">
+            <button>Post</button>
+          </div>
+        </div>
+    </div>
+
+    <div class="recent-posts">
+      <div class="post">
+        <div class="post-content-container">
+          <div class="post-top-level-content">
+            <div class="profile-image">
+              <img src="../img/test/profile-pic-test2.webp" alt="profile-pic">
+            </div>
+    
+            <div class="post-main-content">
+              <p class="username">:Status-6</p>
+              <h2 class="content">Ukraine's State Border Guard informed that Russian forces have captured the Zmiinyi Island in the Black Sea.</h2>
+            </div>
+          </div>
+  
+          <div class="post-action-buttons">
+            <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
+            <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
+            <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-content-container">
+          <div class="post-top-level-content">
+            <div class="profile-image">
+              <img src="../img/test/profile-pic-test3.jpg" alt="profile-pic">
+            </div>
+    
+            <div class="post-main-content">
+              <p class="username">:OSINTdefender</p>
+              <h2 class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione fuga labore placeat quod quidem porro, quas non impedit reprehenderit explicabo aspernatur illo voluptate maxime pariatur cupiditate sint hic. Corrupti totam accusantium doloremque atque soluta? Non laudantium velit cumque molestias maxime doloribus ad ea quasi tempore provident dignissimos quo nulla dolor corrupti, laborum, laboriosam dolores quae deleniti corporis accusantium fugit in soluta eaque. Earum reprehenderit, aut libero porro blanditiis inventore illo quae eaque praesentium incidunt obcaecati deserunt iure optio veritatis soluta a? Laborum debitis eveniet cupiditate natus. In sint doloribus itaque adipisci. Culpa enim obcaecati praesentium expedita suscipit illum, reprehenderit dolorem eveniet inventore rem dignissimos iure? In consectetur provident quibusdam ipsa fugiat maxime optio et, quam voluptatum, cum molestiae eos ea voluptates autem beatae officia aliquam soluta error eligendi sunt quidem voluptatibus libero voluptatem. Culpa impedit soluta quae doloribus veniam error nihil atque repellat iure provident aliquam tempora dolorem numquam dolore maiores beatae, consequatur quaerat laudantium voluptatibus ut voluptate ab asperiores expedita optio. Non quidem sequi vero corporis id facilis repudiandae iure impedit, blanditiis fugit fugiat, necessitatibus nemo. Sapiente dolore dolores amet deserunt in harum! Sunt sequi aliquid dicta, odit dignissimos tempora non ut dolores incidunt doloremque doloribus vel deleniti aperiam!</h2>
+            </div>
+          </div>
+  
+          <div class="post-action-buttons">
+            <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
+            <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
+            <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-content-container">
+          <div class="post-top-level-content">
+            <div class="profile-image">
+              <img src="../img/test/profile-pic-test4.jpg" alt="profile-pic">
+            </div>
+    
+            <div class="post-main-content">
+              <p class="username">:Route 2 FL</p>
+              <h2 class="content">What is the most obvious 200 IQ-play in the market right now?</h2>
+            </div>
+          </div>
+  
+          <div class="post-action-buttons">
+            <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
+            <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
+            <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-content-container">
+          <div class="post-top-level-content">
+            <div class="profile-image">
+              <img src="../img/test/profile-pic-test5.jpeg" alt="profile-pic">
+            </div>
+    
+            <div class="post-main-content">
+              <p class="username">:Rick</p>
+              <h2 class="content">#StPetersburg is pissed!!!</h2>
+            </div>
+          </div>
+  
+          <div class="post-action-buttons">
+            <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
+            <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
+            <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-content-container">
+          <div class="post-top-level-content">
+            <div class="profile-image">
+              <img src="../img/test/profile-pic-test2.webp" alt="profile-pic">
+            </div>
+    
+            <div class="post-main-content">
+              <p class="username">:OSINTdefender</p>
+              <h2 class="content">Join the space for constant updates!</h2>
+            </div>
+          </div>
+  
+          <div class="post-action-buttons">
+            <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
+            <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
+            <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="post-content-container">
+          <div class="post-top-level-content">
+            <div class="profile-image">
+              <img src="../img/test/profile-pic-test3.jpg" alt="profile-pic">
+            </div>
+    
+            <div class="post-main-content">
+              <p class="username">:Status-6</p>
+              <h2 class="content">Pray for ukraine tonight!</h2>
+            </div>
+          </div>
+  
+          <div class="post-action-buttons">
+            <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
+            <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
+            <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside>
+    <div class="aside-title">
+      <h3>Recommend Friends</h3>
+    </div>
+
+    <div class="recommended-to-follow">
+      <div class="recommended-user">
+        <div class="profile-pic">
+          <img src="../img/test/profile-pic-test3.jpg">
+        </div>
+
+        <div class="profile-information">
+          <p class="profile-name">OSINT OpenSource Miltary Inteligance</p>
+          <p class="profile-username">:OSINTdefender</p>
+        </div>
+
+        <div class="follow-action">
+          <button>Follow</button>
+        </div>
+      </div>
+
+      <div class="recommended-user">
+        <div class="profile-pic">
+          <img src="../img/test/profile-pic-test5.jpeg">
+        </div>
+
+        <div class="profile-information">
+          <p class="profile-name">Rick Moldoean</p>
+          <p class="profile-username">:Rick</p>
+        </div>
+
+        <div class="follow-action">
+          <button>Follow</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- <footer></footer> -->
+  <script src="../js/home_feed/textarea_autorezise.js"></script>
+</body>
+</html>

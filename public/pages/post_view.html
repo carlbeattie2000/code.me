@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code.me - Social media platform, built for developers.</title>
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/profile_feed/style.css">
+  <link rel="stylesheet" href="../css/post_view/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="home-feed">
+  <nav>
+    <ul>
+      <a href="./"><img src="../img/own_logo/dark_mode_logo.png" alt="logo for code.me" class="nav-logo"></a>
+      <li><a href="./"><span class="nav-icon"><i class="fa-solid fa-house"></i></span>Home</a></li>
+      <li><a href="/explore"><span class="nav-icon"><i class="fa-solid fa-arrow-right-long"></i></span>Explore</a></li>
+      <li><a href="/profile"><span class="nav-icon"><i class="fa-solid fa-user"></i></span></i>Profile</a></li>
+      <li><button>Post</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="post">
+      <div class="poster-details">
+        <div class="poster-profile-pic">
+          <img src="../img/test/profile-pic-test3.jpg">
+        </div>
+
+        <div class="poster-profile-details">
+          <p class="poster-name">OSINT OpenSource Military Intelligence</p>
+          <p class="poster-username">:OSINTdefender</p>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <p>Zelensky: “Today I asked the 27 leaders of Europe whether Ukraine will be in NATO, I asked directly. Everyone is afraid, does not answer. And we are not afraid, we are not afraid of anything.”</p>
+      </div>
+
+      <div class="post-uploaded-time">
+        <p>12:18am Feb 25, 2022</p>
+      </div>
+
+      <div class="post-stats">
+        <p>1,200 <span class="grayed">Shares</span></p>
+        <p>44,200 <span class="grayed">Likes</span></p>
+      </div>
+
+      <div class="post-actions">
+        <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
+        <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
+        <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
+      </div>
+
+      <div class="user-reply-box">
+        <div class="user-reply-container">
+          <img src="../img/test/profile-pic-test5.jpeg">
+          <textarea oninput="auto_grow(this)" placeholder="Post your reply"></textarea>
+        </div>
+
+        <div class="user-reply-actions">
+          <div class="upload-actions">
+            <button id="post_upload_image"><i class="fa-solid fa-image fa-lg"></i></button>
+            <button id="post_upload_file"><i class="fa-solid fa-file-arrow-up fa-lg"></i></button>
+            <button id="post_upload_code"><i class="fa-solid fa-code fa-lg"></i></button>
+          </div>
+
+          <div class="user-reply-send">
+            <button>Reply</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="reply">
+        <div class="replier-profile-details">
+          <img src="../img/test/profile-pic-test.jpg" alt="profile-pic">
+          <p class="replier-name">MrUnknow123</p>
+          <p class="replier-username">:MrUn123</p>
+          <p class="replier-uploaded-time">25m</p>
+        </div>
+
+        <div class="reply-content">
+          <p class="post-content">
+            For games I have issues with using my controller on, I typically use a program called "AntiMicro", which allows you to map controller inputs to keyboard keys. Hope this helps!
+          </p>
+
+          <div class="reply-actions">
+            <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
+            <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
+            <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside>
+    <div class="aside-title">
+      <h3>Recommend Friends</h3>
+    </div>
+
+    <div class="recommended-to-follow">
+      <div class="recommended-user">
+        <div class="profile-pic">
+          <img src="../img/test/profile-pic-test3.jpg">
+        </div>
+
+        <div class="profile-information">
+          <p class="profile-name">OSINT OpenSource Miltary Inteligance</p>
+          <p class="profile-username">:OSINTdefender</p>
+        </div>
+
+        <div class="follow-action">
+          <button>Follow</button>
+        </div>
+      </div>
+
+      <div class="recommended-user">
+        <div class="profile-pic">
+          <img src="../img/test/profile-pic-test5.jpeg">
+        </div>
+
+        <div class="profile-information">
+          <p class="profile-name">Rick Moldoean</p>
+          <p class="profile-username">:Rick</p>
+        </div>
+
+        <div class="follow-action">
+          <button>Follow</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- <footer></footer> -->
+  <script src="../js/home_feed/textarea_autorezise.js"></script>
+</body>
+</html>

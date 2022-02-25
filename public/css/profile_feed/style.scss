@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap'); // user text content font
+
+// font-family: 'Abel', sans-serif;
+
+.home-feed {
+  nav {
+    ul {
+      list-style: none;
+      display: grid;
+      gap: 20px;
+
+      img {
+        width: 60%;
+        padding: 0 1em;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 0 1em;
+
+        a {
+          color: #FFF;
+          text-decoration: none;
+          font-size: 1.5em;
+          transition: color .3s ease-in-out;
+        }
+
+        a:hover {
+          color: #BB86FC;
+        }
+
+        .nav-icon {
+          margin-right: .5em;
+        }
+
+        button {
+          background-color: #fff;
+          color: #000;
+          border: none;
+          width: 100%;
+          padding: .2em 0;
+          font-weight: bold;
+          border-radius: .7em;
+          font-size: 1.5em;
+          cursor: pointer;
+          transition: background-color .5s ease-in-out, color .5s ease-in-out;
+        }
+
+        button:hover {
+          color: #fff;
+          background-color: #b795e0;
+        }
+      }
+    }
+  }
+
+  main {
+    .post-something {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      margin: 1em 0;
+      width: 100%;
+      .post-content {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        margin: 0 1em;
+        
+        .profile-image {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          img {
+            width: 100px;
+            max-height: 100px;
+            border-radius: 100%;
+          }
+        }
+
+        .text-box {
+          width: 100%;
+          textarea {
+            background-color: transparent;
+            overflow: hidden;
+            border: none;
+            color: #f2e7fe;
+            width: 100%;
+            resize: none;
+            height: 85px;
+            max-height: 200px;
+            padding-bottom: 5em;
+          }
+  
+          textarea:focus {
+            outline: none;
+            border-bottom: .5px solid rgba(204, 204, 204, 0.623);
+          }
+        }
+      }
+
+      .posting-actions {
+        display: flex;
+        width: 80%;
+        align-self: center;
+
+        button {
+          background-color: transparent;
+          border: none;
+          color: #FFF;
+          cursor: pointer;
+          transition: color .5s ease-in-out;
+        }
+
+        button:hover {
+          color: #BB86FC;
+        }
+
+        .upload-icons {
+          display: flex;
+          column-gap: 25px;
+        }
+
+        .post-content-button {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+
+          button {
+            background-color: #fff;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.5em;
+            width: 20%;
+            border-radius: 1em;
+            transition: background-color .5s ease-in-out, color .5s ease-in-out;
+          }
+
+          button:hover {
+            color: #fff;
+            background-color: #b795e0;
+          }
+        }
+      }
+    }
+
+    .recent-posts {
+      .post {
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.247);
+        display: flex;
+        justify-content: center;
+        padding: 1em 0;
+        cursor: pointer;
+        transition: background-color .325s ease-in;
+        .post-content-container {
+          display: flex;
+          align-items: center;
+          width: 70%;
+          flex-direction: column;
+          .post-top-level-content {
+            margin: 1em 0;
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            .profile-image {
+              justify-self: center;
+              img {
+                width: 70px;
+                height: 70px;
+                border-radius: 100%;
+                object-fit: cover;
+              }
+            }
+
+            .post-main-content {
+              .username {
+                font-weight: bold;
+                color: #FFF;
+                margin-bottom: .5em;
+              }
+              .content {
+                color: #FFF;
+                font-family: 'Abel', sans-serif;
+                font-size: 1.4em;
+                font-weight: 300;
+                max-height: 200px;
+                overflow-y: scroll;
+                width: 30vw;
+                -ms-overflow-style: none;  /* Internet Explorer 10+ */
+                scrollbar-width: none;  /* Firefox */
+              }
+
+              .content::-webkit-scrollbar { 
+                display: none;  /* Safari and Chrome */
+              }
+            }
+          }
+
+          .post-action-buttons {
+            display: flex;
+            justify-content: space-evenly;
+            align-self: flex-end;
+            button {
+              color: #FFF;
+              background-color: transparent;
+              border: none;
+              width: 100px;
+              cursor: pointer;
+              transition: color .3s ease-in-out;
+            }
+
+            button:hover {
+              color: #BB86FC;
+            }
+          }
+        }
+      }
+      .post:hover {
+        background-color: #252525;
+      }
+    }
+  }
+
+  aside {
+    margin: 0 1em;
+    padding: 1em 0;
+    .aside-title {
+      color: #FFF;
+    }
+
+    .recommended-to-follow {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+
+      .recommended-user {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        padding: 0.2em;
+        transition: background-color .2s ease-in-out;
+        border-radius: 0.25em;
+        margin: .5em 0;
+
+        .profile-pic {
+          align-self: center;
+          img {
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+          }
+        }
+
+        .profile-information {
+          align-self: center;
+          .profile-name {
+            color: #FFF;
+            font-weight: bold;
+            margin: 0 0 .5em 0;
+          }
+
+          .profile-username {
+            color: #FFF;
+          }
+        }
+
+        .follow-action {
+          align-self: center;
+          button {
+            font-size: 1em;
+            padding: .5em;
+            border-radius: 1em;
+            border: none;
+            background: #FFF;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color .3s ease-in-out, color .3s ease-in-out;
+          }
+
+          button:hover {
+            background-color: #BB86FC;
+            color: #FFF;
+          }
+        }
+      }
+
+      .recommended-user:hover {
+        background-color: rgba(85, 85, 85, 0.425);
+        cursor: pointer;
+      }
+    }
+  }
+}

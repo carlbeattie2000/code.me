@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Kufam', sans-serif;
+}
+
+.user-auth-page {
+  background-color: #121212;
+}
+
+.user-auth-page main {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 4em;
+}
+
+.user-auth-page main .user-auth-form {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.user-auth-page main .user-auth-form .user-auth-logo {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+.user-auth-page main .user-auth-form .user-auth-logo img {
+  max-width: 100%;
+  width: 50%;
+}
+
+.user-auth-page main .user-auth-form .user-auth-details {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+
+.user-auth-page main .user-auth-form .user-auth-details input {
+  padding: .5em;
+  border: none;
+  font-size: 1.3em;
+  background-color: transparent;
+  border: 2px solid #BB86FC;
+  border-radius: 0.3em;
+  color: #FFF;
+  caret-color: #fff;
+}
+
+.user-auth-page main .user-auth-form .user-auth-details input::-webkit-input-placeholder {
+  color: #b4b4b4;
+}
+
+.user-auth-page main .user-auth-form .user-auth-details input:-ms-input-placeholder {
+  color: #b4b4b4;
+}
+
+.user-auth-page main .user-auth-form .user-auth-details input::-ms-input-placeholder {
+  color: #b4b4b4;
+}
+
+.user-auth-page main .user-auth-form .user-auth-details input::placeholder {
+  color: #b4b4b4;
+}
+
+.user-auth-page main .user-auth-form .user-auth-details input:focus {
+  outline: 1px solid #fff;
+}
+
+.user-auth-page main .user-auth-form .user-auth-details label {
+  color: #FFF;
+  font-weight: bold;
+}
+
+.user-auth-page main .user-auth-form .user-auth-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  margin: 1em 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user-auth-page main .user-auth-form .user-auth-buttons .buttons-container-auth button {
+  margin: 0.2em 0;
+  font-size: 1.4em;
+  padding: .6em 0;
+  width: 9vw;
+  cursor: pointer;
+  background-color: #BB86FC;
+  border: none;
+  border-radius: .3em;
+  font-weight: bold;
+  color: #FFF;
+  -webkit-transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.user-auth-page main .user-auth-form .user-auth-buttons .buttons-container-auth button:hover {
+  background-color: #c49ef1;
+  color: #302f2f;
+}
+
+.user-auth-page main .site-short-description {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user-auth-page main .site-short-description p {
+  color: #FFF;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */
