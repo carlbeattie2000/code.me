@@ -69,7 +69,7 @@ const createNewPostDiv = (post) => {
 
         <div class="post-action-buttons">
           <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i><span>${post.comments_count}</span></button>
-          <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i><span>${post.likes}</span></button>
+          <button class="post_action_like" value="${post.post_id}"><i class="fa-solid fa-heart fa-lg"></i></i><span>${post.likes}</span></button>
           <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
         </div>
       </div>
@@ -79,20 +79,21 @@ const createNewPostDiv = (post) => {
   return div
 }
 
-// Load home feed with posts
-getPostsFromServer()
-  .then((posts) => {
-    for (let post of posts) loadedPosts += createNewPostDiv(post);
-
-    homeFeedPostsSection.innerHTML = loadedPosts;
-  })
-
-setInterval(() => {
+const updatePostsFeed = () => {
   loadedPosts = "";
   getPostsFromServer()
-  .then((posts) => {
-    for (let post of posts) loadedPosts += createNewPostDiv(post);
+    .then((posts) => {
+      for (let post of posts) loadedPosts += createNewPostDiv(post);
 
-    homeFeedPostsSection.innerHTML = loadedPosts;
-  })
+      homeFeedPostsSection.innerHTML = loadedPosts;
+
+      getLikeButtons();
+    })
+}
+
+// Load home feed with posts
+updatePostsFeed();
+
+setInterval(() => {
+  updatePostsFeed();
 }, 30000);

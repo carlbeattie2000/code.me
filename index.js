@@ -1,3 +1,10 @@
+// TODO: 
+// 1. When user has already liked a post and clicks the like button, unlike that post
+// 2. Show the if the user has already liked a post
+// 3. User profile
+// 4. Post page, with comments
+// 5. Move to frontend framework
+
 const express = require("express");
 const path = require("path");
 

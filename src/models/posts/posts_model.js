@@ -1,6 +1,8 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 const crypto = require("crypto");
 
+const likesModel = require("./post_likes_model");
+
 const sequelize = new Sequelize({
   dialect: "sqlite",
   storage: "./database/posts.db",
@@ -78,10 +80,27 @@ const getAllPostsByPostersId = async (posters_id) => {
   return posts
 }
 
+const updatePostsLikeCount = async (post_id) => {
+  likesModel.findLikesByPostId(post_id)
+    .then(async (amount) => {
+      await Posts.update(
+        {
+          likes: amount.length,
+        },
+        {
+          where: {
+            post_id: post_id
+          }
+        }
+      )
+    })
+}
+
 module.exports = {
   createPostsTable,
   createNewPost,
   getAllPosts,
   getPostById,
-  getAllPostsByPostersId
+  getAllPostsByPostersId,
+  updatePostsLikeCount
 }

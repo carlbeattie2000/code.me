@@ -31,6 +31,7 @@ usersAPI.post("/login-auth", (req, res) => {
 
       return res.json({loggedIn: true});
     })
+    .catch(error => res.send(error));
 })
 
 usersAPI.get("/current-user-details", (req, res) => {
@@ -60,7 +61,7 @@ usersAPI.get("/public-user-by-id", (req, res) => {
 
 usersAPI.get("/logout", (req, res) => {
   if (req.session.userAuthenticated) {
-    res.session.user = undefined;
+    req.session.user = undefined;
     req.session.userAuthenticated = false;
 
     res.sendStatus(200);

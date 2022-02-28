@@ -35,12 +35,30 @@ postsAPI.get("/recent-posts", (req, res) => {
       const postsDataMin = []
       
       for (let post of posts) {
+        postsModel.updatePostsLikeCount(post.dataValues.post_id);
         postsDataMin.push(post.dataValues);
       }
 
       return res.send(postsDataMin.splice(0, 51).reverse());
     })
     .catch((err) => res.status(500).json({error: err}));
+})
+
+postsAPI.get("/like-post", (req, res) => {
+  postLikesModel.matchPostIdAndUserId(req.query.post_id, req.session.user.user_id)
+    .then((result) => {
+      if (result.length > 0) {
+        return res.status(401);
+      }
+
+      postLikesModel.createNewLikedPost(req.query.post_id, req.session.user.user_id)
+        .then(() => {
+          postsModel.updatePostsLikeCount(req.query.post_id)
+            .then(() => {
+              res.status(200);
+            })
+        });
+    })
 })
 
 module.exports = postsAPI;

@@ -92,8 +92,10 @@
   height: 100px;
   max-height: 100px;
   border-radius: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: .16em;
+  border: 1px solid #fff;
 }
 
 .home-feed main .post-something .post-content .text-box {
@@ -216,11 +218,13 @@
 }
 
 .home-feed main .recent-posts .post .post-content-container .post-top-level-content .profile-image img {
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   border-radius: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 1px solid #fff;
+  padding: .16em;
 }
 
 .home-feed main .recent-posts .post .post-content-container .post-top-level-content .post-main-content {

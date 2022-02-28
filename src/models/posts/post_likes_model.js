@@ -1,4 +1,4 @@
-const { Sequelize, Model, DataTypes } = require("sequelize");
+const { Sequelize, Model, DataTypes, Op } = require("sequelize");
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
@@ -66,9 +66,25 @@ const findLikesByUserId = async (liker_id) => {
   return likes
 }
 
+const matchPostIdAndUserId = async (post_id, liker_id) => {
+  const likes = await Likes.findAll(
+    {
+      where: {
+        [Op.and]: [
+          { post_id: post_id },
+          { liker_id: liker_id }
+        ]
+      }
+    }
+  )
+
+  return likes
+}
+
 module.exports = {
   createLikesTable,
   createNewLikedPost,
   findLikesByPostId,
-  findLikesByUserId
+  findLikesByUserId,
+  matchPostIdAndUserId
 }
