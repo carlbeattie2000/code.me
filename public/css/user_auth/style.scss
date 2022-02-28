@@ -34,6 +34,12 @@
         justify-content: center;
         gap: 20px;
 
+        form {
+          display: flex;
+          flex-direction: column;
+          row-gap: 20px;
+        }
+
         input {
           padding: .5em;
           border: none;

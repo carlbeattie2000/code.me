@@ -269,6 +269,10 @@
   transition: color .3s ease-in-out;
 }
 
+.home-feed main .recent-posts .post .post-content-container .post-action-buttons button span {
+  margin: 0em 1em;
+}
+
 .home-feed main .recent-posts .post .post-content-container .post-action-buttons button:hover {
   color: #BB86FC;
 }

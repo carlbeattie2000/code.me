@@ -209,6 +209,10 @@
               width: 100px;
               cursor: pointer;
               transition: color .3s ease-in-out;
+
+              span {
+                margin: 0em 1em;
+              }
             }
 
             button:hover {

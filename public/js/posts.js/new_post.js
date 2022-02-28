@@ -1,7 +1,7 @@
 const sendPostToApi = async (data) => {
   const url = "http://192.168.0.3:4001/new-post";
 
-  const serverRequest = await fetch(url, {
+  const serverRequest = fetch(url, {
     method: "POST",
     mode: "cors",
     cache: "no-cache",
@@ -13,4 +13,6 @@ const sendPostToApi = async (data) => {
     referrerPolicy: "no-referrer",
     body: JSON.stringify(data)
   })
+
+  return (await serverRequest).json();
 }

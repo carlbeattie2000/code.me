@@ -36,7 +36,6 @@ const getPostersDetails = async (postersID) => {
 }
 
 const createNewPostDiv = (post) => {
-  console.log(post);
   const div = `
     <div class="post">
       <div class="post-content-container">
@@ -52,8 +51,8 @@ const createNewPostDiv = (post) => {
         </div>
 
         <div class="post-action-buttons">
-          <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
-          <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
+          <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i><span>${post.comments_count}</span></button>
+          <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i><span>${post.likes}</span></button>
           <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
         </div>
       </div>

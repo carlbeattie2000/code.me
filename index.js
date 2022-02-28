@@ -1,24 +1,15 @@
-// TODO
-// 1. CLEAN CODE (REMOVE CONSOLE LOGS) --> DONE
-// 2. PROFILE PICS NEED TO BE ABLE TO BE UPLOADED --> DONE
-// 3. POSTS DISPLAYED NEED TO SHOW LIKE COUNT, COMMENT COUNT AND TIME SINCE POSTED
-// 4. ADD ROUTES FOLDERS TO ROUTES FOLDER!! AND UPDATE ANY PATHS THAT NEED TO BE UPDATED --> DONE
-
 const express = require("express");
-const cors = require("cors");
-
 const path = require("path");
+
 const PORT = process.env.PORT || 4001;
 const app = express();
 
-const userAuthentication = require("./src/routes/userAuth");
-const postsAPI = require("./src/routes/posts");
+const usersAPI = require("./src/routes/userAuth/users_api");
+const postsAPI = require("./src/routes/posts/posts_api");
 
-app.use(cors());
 app.use(express.static('public'));
 app.use(require('cookie-parser') ());
 app.use(require('body-parser').urlencoded({ extended: true }));
-// app.use(express.json());
 app.use(require('express-session') ({ 
   secret: 'dhye7#fhfy!7dh',
   resave: true,
@@ -29,10 +20,8 @@ app.use(require('express-session') ({
  }));
 
 // Can i clean these up?
-app.use("/", userAuthentication.loginAPI);
-app.use("/", userAuthentication.registerAPI);
-app.use("/", postsAPI.getPosts);
-app.use("/", postsAPI.newPosts); 
+app.use("/", postsAPI);
+app.use("/", usersAPI);
 
 app.get("/", (req, res, next) => {
   if (!req.session.userAuthenticated) {
