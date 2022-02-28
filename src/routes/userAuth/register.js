@@ -1,9 +1,15 @@
 const express = require("express");
 const path = require("path");
+const formidable = require("express-formidable");
 
 const registerAuth = express.Router();
 
+registerAuth.use(formidable({
+  multiples: false
+}));
+
 const registerHelper = require("../../helpers/register_valid_data");
+const uploadImageHelper = require("../../helpers/upload_image");
 const registerModel = require("../../models/auth/register_model");
 
 registerAuth.get("/register", (req, res, next) => {
@@ -24,7 +30,18 @@ registerAuth.get("/register", (req, res, next) => {
 })
 
 registerAuth.post("/register-post", (req, res) => {
-  let { email, personName, username, password, dob, termsAgreed } = req.body;
+  const file = req.files;
+  const uploadImagePath = path.join(__dirname, "../../../public/img/profile_pics/");
+
+  const uploadedImageName = uploadImageHelper(uploadImagePath, file.profilePic, 2000*1000);
+
+  if (uploadedImageName == 2) {
+    return res.status(301).sendFile(path.join(__dirname, "../../../public/pages/register.html"));
+  }
+
+  const profilePicPath = "img/profile_pics/"+uploadedImageName;
+
+  let {email, personName, username, password, dob, agree_register} = req.fields;
 
   personName = registerHelper.validString(personName);
   username = registerHelper.validString(username);
@@ -36,7 +53,7 @@ registerAuth.post("/register-post", (req, res) => {
   if (!registerHelper.dobCheck(dob))
     return false
   
-  if (!termsAgreed)
+  if (!agree_register)
     return false
 
   registerModel.checkIfUserAlreadyExists(email, (status) => {
@@ -46,9 +63,11 @@ registerAuth.post("/register-post", (req, res) => {
 
     if (
       registerModel.newUser(
-      email, personName, username, password, dob, termsAgreed)) {
-      return res.send({register_complete: true});
+      email, personName, username, password, profilePicPath, dob, agree_register)) {
+      return res.redirect("/login");
     }
+
+    res.status(501).json({error: "server error!"});
   });
 })
 

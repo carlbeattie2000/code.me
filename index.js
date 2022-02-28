@@ -1,6 +1,6 @@
 // TODO
 // 1. CLEAN CODE (REMOVE CONSOLE LOGS) --> DONE
-// 2. PROFILE PICS NEED TO BE ABLE TO BE UPLOADED
+// 2. PROFILE PICS NEED TO BE ABLE TO BE UPLOADED --> DONE
 // 3. POSTS DISPLAYED NEED TO SHOW LIKE COUNT, COMMENT COUNT AND TIME SINCE POSTED
 // 4. ADD ROUTES FOLDERS TO ROUTES FOLDER!! AND UPDATE ANY PATHS THAT NEED TO BE UPDATED --> DONE
 
@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(require('cookie-parser') ());
 app.use(require('body-parser').urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.json());
 app.use(require('express-session') ({ 
   secret: 'dhye7#fhfy!7dh',
   resave: true,

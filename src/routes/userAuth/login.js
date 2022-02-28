@@ -3,6 +3,8 @@ const path = require("path");
 
 const loginAuth = express.Router();
 
+loginAuth.use(express.json());
+
 const loginAuthFunctions = require("../../helpers/loginAuthFunctions");
 const getUsersModel = require("../../models/auth/get_users_details");
 
@@ -30,6 +32,8 @@ loginAuth.get("/login", (req, res, next) => {
 loginAuth.post("/login-auth", (req, res) => {
   const { usernameOrEmail, password } = req.body;
 
+  console.log(req.body);
+
   loginAuthFunctions(usernameOrEmail, password, (status) => {
     if (status == 2) {
       return res.send({login_response: "Server error"})
@@ -42,8 +46,19 @@ loginAuth.post("/login-auth", (req, res) => {
     req.session.user = status;
     req.session.userAuthenticated = true;
 
-    return res.send({login_response: "success", login_complete: true})
+    return res.redirect("/");
   });
+})
+
+loginAuth.get("/current-user-details", (req, res) => {
+  if (req.session.userAuthenticated) {
+    return res.json({
+      username: req.session.user.username,
+      profileImage: req.session.user.profileImage,
+    })
+  }
+
+  return res.json({error: "not logged in"});
 })
 
 loginAuth.get("/public-user-by-id", (req, res) => {

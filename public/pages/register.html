@@ -16,24 +16,28 @@
       </div>
 
       <div class="user-auth-details">
-        <input type="email" placeholder="email" id="email_register">
-        <input type="text" placeholder="name" id="name_register">
-        <input type="text" placeholder="username" id="username_register">
-        <input type="text" placeholder="password" id="password_register">
-        <input type="file" id="file-upload-btn" hidden>
-        <label for="file-upload-btn" class="file-upload-btn">Select profile pic <span id="file-selected">No File Selected</span></label>
-        <label for="dob_register">Date of birth</label>
-        <input type="date" id="dob_register">
+        <form id="userRegisterForm" method="POST" enctype="multipart/form-data" action="/register-post">
+          <input type="email" placeholder="email" name="email" required>
+          <input type="text" placeholder="name" name="personName" required>
+          <input type="text" placeholder="username" name="username" required>
+          <input type="text" placeholder="password" name="password" required>
 
-        <label for="terms_agree">Do you confirm that you are aged 13 and over</label>
-        <input type="checkbox" id="terms_agree" id="terms_agree_register"
-      </div>
+          <input type="file" id="file-upload-btn" name="profilePic" required hidden>
+          <label for="file-upload-btn" class="file-upload-btn">Select profile pic <span id="file-selected">No File Selected</span></label>
 
-      <div class="user-auth-buttons">
-        <div class="buttons-container-auth">
-          <button id="auth_register">Register</button>
-          <button id="auth_login_visit">Login</button>
-        </div>
+          <label for="dob_register">Date of birth</label>
+          <input type="date"name="dob" required>
+
+          <label for="terms_agree">Do you confirm that you are aged 13 and over</label>
+          <input type="checkbox" id="terms_agree" name="agree_register" required>
+
+          <div class="user-auth-buttons">
+            <div class="buttons-container-auth">
+              <button type="submit">Register</button>
+              <button id="auth_login_visit">Login</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
 

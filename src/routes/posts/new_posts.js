@@ -4,6 +4,8 @@ const crypto = require("crypto");
 const newPostAPI = express.Router();
 const newPostModel = require("../../models/posts/new_post_model");
 
+newPostAPI.use(express.json());
+
 newPostAPI.post("/new-post", (req, res) => {
   if (!req.session.userAuthenticated) {
     return res.send({error_message: "You must be logged into to upload a post!"});

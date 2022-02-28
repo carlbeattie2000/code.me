@@ -12,15 +12,15 @@ const checkIfUserAlreadyExists = async (email, cb) => {
  })
 }
 
-const newUser = async (email, name, username, password, dob, termsAgree) => {
+const newUser = async (email, name, username, password, profilePicPath, dob, termsAgree) => {
   const customHashSalt = crypto.randomBytes(16).toString("hex");
   const hashedPassword = hashingFunctions.hashStringWithCustomSalt(
     password, customHashSalt);
   const generatedAccountID = crypto.randomBytes(12).toString("hex");
 
-  const sqlQuery = usersDatabase.prepare("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+  const sqlQuery = usersDatabase.prepare("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-  sqlQuery.run(generatedAccountID, email, name, username, hashedPassword, dob, termsAgree, customHashSalt);
+  sqlQuery.run(generatedAccountID, email, name, username, hashedPassword, profilePicPath, dob, termsAgree, customHashSalt);
 
   sqlQuery.finalize();
 

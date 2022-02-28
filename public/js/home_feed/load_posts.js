@@ -1,6 +1,17 @@
 const homeFeedPostsSection = document.getElementById("home_feed_posts");
 let loadedPosts = "";
 
+const loadDefaultProfileDetails = async () => {
+  const serverRequest = await fetch("http://192.168.0.3:4001/current-user-details");
+  const serverResponse = await serverRequest.json();
+
+  return serverResponse;
+}
+
+loadDefaultProfileDetails().then((user) => {
+  document.getElementById("profile_image_home_feed").src = user.profileImage;
+})
+
 const getPostsFromServer = async () => {
   const url = "http://192.168.0.3:4001/recent-posts";
   const request = await fetch(url);
@@ -9,6 +20,7 @@ const getPostsFromServer = async () => {
   for (let res of response) {
     const username = await getPostersDetails(res.posters_id).then((user) => {
       res.username = user.username;
+      res.profileImage = user.profilePicPath;
     })
   }
 
@@ -30,7 +42,7 @@ const createNewPostDiv = (post) => {
       <div class="post-content-container">
         <div class="post-top-level-content">
           <div class="profile-image">
-            <img src="../img/test/profile-pic-test.jpg" alt="profile-pic">
+            <img src="${post.profileImage}" alt="profile-pic">
           </div>
 
           <div class="post-main-content">

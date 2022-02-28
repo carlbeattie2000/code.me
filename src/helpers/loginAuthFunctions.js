@@ -15,7 +15,7 @@ const userValidLogin = (usernameOrEmail, password, cb) => {
     
     const isValid = validPassword(password, results[0].password, results[0].passwordSalt);
 
-    const user = {id: results[0].id, username: results[0].username, hashedPassword: results[0].password, passwordSalt: results[0].passwordSalt};
+    const user = {id: results[0].id, username: results[0].username, hashedPassword: results[0].password, profileImage:results[0].profilePicPath, passwordSalt: results[0].passwordSalt};
 
     if (isValid) {
       return cb(user)
