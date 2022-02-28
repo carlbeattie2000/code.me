@@ -2,7 +2,7 @@ const express = require("express");
 const crypto = require("crypto");
 
 const newPostAPI = express.Router();
-const newPostModel = require("../models/posts/new_post_model");
+const newPostModel = require("../../models/posts/new_post_model");
 
 newPostAPI.post("/new-post", (req, res) => {
   if (!req.session.userAuthenticated) {

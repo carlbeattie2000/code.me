@@ -1,5 +1,5 @@
 // TODO
-// 1. CLEAN CODE (REMOVE CONSOLE LOGS)
+// 1. CLEAN CODE (REMOVE CONSOLE LOGS) --> DONE
 // 2. PROFILE PICS NEED TO BE ABLE TO BE UPLOADED
 // 3. POSTS DISPLAYED NEED TO SHOW LIKE COUNT, COMMENT COUNT AND TIME SINCE POSTED
 // 4. ADD ROUTES FOLDERS TO ROUTES FOLDER!! AND UPDATE ANY PATHS THAT NEED TO BE UPDATED
@@ -11,8 +11,8 @@ const path = require("path");
 const PORT = process.env.PORT || 4001;
 const app = express();
 
-const userAuthentication = require("./src/userAuth");
-const postsAPI = require("./src/posts/");
+const userAuthentication = require("./src/routes/userAuth");
+const postsAPI = require("./src/routes/posts");
 
 app.use(cors());
 app.use(express.static('public'));

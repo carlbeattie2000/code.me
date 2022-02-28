@@ -1,7 +1,7 @@
 const express = require("express");
 
 const getPostsAPI = express.Router();
-const getPostsModel = require("../models/posts/get_posts_model");
+const getPostsModel = require("../../models/posts/get_posts_model");
 
 getPostsAPI.get("/recent-posts", (req, res) => {
   if (req.session.userAuthenticated) {

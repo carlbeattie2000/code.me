@@ -3,8 +3,8 @@ const path = require("path");
 
 const registerAuth = express.Router();
 
-const registerHelper = require("../helpers/register_valid_data");
-const registerModel = require("../models/auth/register_model");
+const registerHelper = require("../../helpers/register_valid_data");
+const registerModel = require("../../models/auth/register_model");
 
 registerAuth.get("/register", (req, res, next) => {
   const options = {

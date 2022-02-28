@@ -3,8 +3,8 @@ const path = require("path");
 
 const loginAuth = express.Router();
 
-const loginAuthFunctions = require("../helpers/loginAuthFunctions");
-const getUsersModel = require("../models/auth/get_users_details");
+const loginAuthFunctions = require("../../helpers/loginAuthFunctions");
+const getUsersModel = require("../../models/auth/get_users_details");
 
 loginAuth.get("/login", (req, res, next) => {
   if (req.session.userAuthenticated) {
