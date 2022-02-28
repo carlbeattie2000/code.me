@@ -19,7 +19,7 @@ postsAPI.post("/new-post", express.json(), (req, res) => {
   const postContent = req.body.content;
 
   if (Object.values(postContent).length > 0) {
-    postsModel.createNewPost(req.session.user.id, postContent)
+    postsModel.createNewPost(req.session.user.user_id, postContent)
       .finally(res.sendStatus(200))
       .catch((err) => res.status(500).json({error: err}));
   }
@@ -31,7 +31,15 @@ postsAPI.get("/recent-posts", (req, res) => {
   }
 
   postsModel.getAllPosts()
-    .then((posts) => res.send(posts))
+    .then((posts) => {
+      const postsDataMin = []
+      
+      for (let post of posts) {
+        postsDataMin.push(post.dataValues);
+      }
+
+      return res.send(postsDataMin.splice(0, 51).reverse());
+    })
     .catch((err) => res.status(500).json({error: err}));
 })
 

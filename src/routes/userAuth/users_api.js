@@ -23,13 +23,13 @@ usersAPI.post("/login-auth", (req, res) => {
   usersModel.validUserLogin(usernameOrEmail, password)
     .then((result) => {
       if (!result) {
-        return res.status(404).json({error: "user details incorrect"});
+        return res.status(404).json({error: "user details incorrect", loggedIn: false});
       }
 
       req.session.user = result[0].dataValues;
       req.session.userAuthenticated = true;
 
-      return res.redirect("/");
+      return res.json({loggedIn: true});
     })
 })
 
@@ -44,11 +44,17 @@ usersAPI.get("/current-user-details", (req, res) => {
   )
 })
 
-usersAPI.get("/public.user-by-id", (req, res) => {
+usersAPI.get("/public-user-by-id", (req, res) => {
   if (!req.session.userAuthenticated) return res.sendStatus(401);
 
   usersModel.getUserById(req.query.user_id)
-    .then((result) => res.send(result))
+    .then((result) => {
+      res.send({
+        id: result[0].dataValues.user_id,
+        username: result[0].dataValues.username,
+        profilePicPath: result[0].dataValues.profilePicPath
+      })
+    })
     .catch((err) => res.send(err));
 })
 

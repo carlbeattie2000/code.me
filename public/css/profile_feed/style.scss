@@ -175,10 +175,16 @@
             }
 
             .post-main-content {
+              display: grid;
+              grid-template-columns: repeat(1, 100%);
               .username {
                 font-weight: bold;
                 color: #FFF;
                 margin-bottom: .5em;
+              }
+              .uploadedTime {
+                grid-column: 2;
+                color: #fff;
               }
               .content {
                 color: #FFF;

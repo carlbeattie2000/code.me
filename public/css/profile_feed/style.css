@@ -223,10 +223,23 @@
      object-fit: cover;
 }
 
+.home-feed main .recent-posts .post .post-content-container .post-top-level-content .post-main-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (100%)[1];
+      grid-template-columns: repeat(1, 100%);
+}
+
 .home-feed main .recent-posts .post .post-content-container .post-top-level-content .post-main-content .username {
   font-weight: bold;
   color: #FFF;
   margin-bottom: .5em;
+}
+
+.home-feed main .recent-posts .post .post-content-container .post-top-level-content .post-main-content .uploadedTime {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  color: #fff;
 }
 
 .home-feed main .recent-posts .post .post-content-container .post-top-level-content .post-main-content .content {

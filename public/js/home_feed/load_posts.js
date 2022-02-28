@@ -35,7 +35,23 @@ const getPostersDetails = async (postersID) => {
   return response
 }
 
+const secondsToFormattedTime = (secondsToConvert) => {
+  if (secondsToConvert < 60) {
+    return Math.floor(secondsToConvert) + "s";
+  }
+
+  if (secondsToConvert < 3600) {
+    return Math.floor(secondsToConvert / 60) + "m";
+  }
+
+  if (secondsToConvert < 86400) {
+    return Math.floor(secondsToConvert / 3600) + "hr";
+  }
+}
+
 const createNewPostDiv = (post) => {
+  const timeSincePosted = (Date.now() / 1000) - post.date_posted;
+
   const div = `
     <div class="post">
       <div class="post-content-container">
@@ -46,6 +62,7 @@ const createNewPostDiv = (post) => {
 
           <div class="post-main-content">
             <p class="username">:${post.username}</p>
+            <p class="uploadedTime">${secondsToFormattedTime(timeSincePosted)}</p>
             <h2 class="content">${post.post_content}</h2>
           </div>
         </div>

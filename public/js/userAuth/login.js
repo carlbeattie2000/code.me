@@ -1,7 +1,10 @@
 const loginSubmitButton = document.getElementById("auth_login");
 
 loginSubmitButton.addEventListener("click", () => {
-  sendLoginDetails(getUserLoginFormDetails());
+  sendLoginDetails(getUserLoginFormDetails())
+    .then(response => {
+      if (response.loggedIn) window.location.href = "/";
+    });
 })
 
 const getUserLoginFormDetails = () => {
