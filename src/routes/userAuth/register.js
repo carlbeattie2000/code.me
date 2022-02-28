@@ -8,7 +8,7 @@ const registerModel = require("../../models/auth/register_model");
 
 registerAuth.get("/register", (req, res, next) => {
   const options = {
-    root: path.join(__dirname, '../../public'),
+    root: path.join(__dirname, '../../../public'),
     dotfiles: 'deny',
     headers: {
       'x-timestamp': Date.now(),

@@ -11,11 +11,10 @@
   background-color: #121212;
 
   main {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    row-gap: 4em;
     .user-auth-form {
       display: grid;
       justify-content: center;
@@ -57,6 +56,22 @@
         label {
           color: #FFF;
           font-weight: bold;
+        }
+
+        .file-upload-btn {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: .5em;
+          background-color: #BB86FC;
+          padding: .6em;
+          border-radius: 1em;
+          font-weight: bold;
+          cursor: pointer;
+
+          span {
+            font-size: .7em;
+          }
         }
       }
 

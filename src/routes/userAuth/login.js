@@ -12,7 +12,7 @@ loginAuth.get("/login", (req, res, next) => {
   }
 
   const options = {
-    root: path.join(__dirname, '../../public'),
+    root: path.join(__dirname, '../../../public'),
     dotfiles: 'deny',
     headers: {
       'x-timestamp': Date.now(),
@@ -58,6 +58,13 @@ loginAuth.get("/public-user-by-id", (req, res) => {
   } else {
     return res.sendStatus(401);
   }
+})
+
+loginAuth.get("/logout", (req, res) => {
+  req.session.user = undefined;
+  req.session.userAuthenticated = false;
+
+  res.sendStatus(200);
 })
 
 module.exports = loginAuth;
