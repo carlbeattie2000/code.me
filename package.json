@@ -11,8 +11,6 @@
     "express": "^4.17.3",
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.2",
-    "impostor_js": "^0.5.3",
-    "sequelize": "^6.17.0",
-    "sqlite3": "^5.0.2"
+    "sequelize": "^6.17.0"
   }
 }
