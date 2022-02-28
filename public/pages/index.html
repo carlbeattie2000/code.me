@@ -27,7 +27,7 @@
             <img src="../img/test/profile-pic-test.jpg" alt="profile-pic">
           </div>
           <div class="text-box">
-            <textarea placeholder="What's on your mind?" oninput="auto_grow(this)"></textarea>
+            <textarea placeholder="What's on your mind?" oninput="auto_grow(this)" id="home_feed_post_content"></textarea>
           </div>
         </div>
 
@@ -39,7 +39,7 @@
           </div>
 
           <div class="post-content-button">
-            <button>Post</button>
+            <button id="home_feed_send_post">Post</button>
           </div>
         </div>
     </div>
@@ -213,5 +213,7 @@
 
   <!-- <footer></footer> -->
   <script src="../js/home_feed/textarea_autorezise.js"></script>
+  <script src="../js/posts.js/new_post.js"></script>
+  <script src="../js/posts.js/post_forms.js"></script>
 </body>
 </html>

@@ -9,18 +9,22 @@ newPostAPI.post("/new-post", (req, res) => {
     return res.send({error_message: "You must be logged into to upload a post!"});
   }
   
-  const postContent = req.body;
+  const postContent = req.body.content;
 
-  const newPost = {
-    postID: crypto.randomBytes(10).toString("hex"),
-    posterID: req.session.user.id,
-    postContent: postContent,
-    likes: 0,
-    commentCount: 0,
-    timePosted: Math.floor(Date.now()/1000)
+  console.log(postContent);
+
+  if (Object.values(postContent).length > 0) {
+    newPostModel.uploadNewPost({
+      postID: crypto.randomBytes(10).toString("hex"),
+      posterID: req.session.user.id,
+      postContent: postContent,
+      timePosted: Math.floor(Date.now()/1000)
+    });
+
+    return res.send({message: "your post was uploaded successfully"});
   }
 
-  
+  res.send({message: "you must be signed in to post"});
 })
 
 module.exports = newPostAPI;

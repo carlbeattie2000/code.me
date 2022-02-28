@@ -4,6 +4,8 @@ const path = require("path");
 const PORT = process.env.PORT || 4001;
 const app = express();
 
+global.developerMode = true;
+
 const userAuthentication = require("./src/userAuth");
 const postsAPI = require("./src/posts/");
 
