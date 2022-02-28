@@ -1,14 +1,20 @@
+// TODO
+// 1. CLEAN CODE (REMOVE CONSOLE LOGS)
+// 2. PROFILE PICS NEED TO BE ABLE TO BE UPLOADED
+// 3. POSTS DISPLAYED NEED TO SHOW LIKE COUNT, COMMENT COUNT AND TIME SINCE POSTED
+// 4. ADD ROUTES FOLDERS TO ROUTES FOLDER!! AND UPDATE ANY PATHS THAT NEED TO BE UPDATED
+
 const express = require("express");
+const cors = require("cors");
 
 const path = require("path");
 const PORT = process.env.PORT || 4001;
 const app = express();
 
-global.developerMode = true;
-
 const userAuthentication = require("./src/userAuth");
 const postsAPI = require("./src/posts/");
 
+app.use(cors());
 app.use(express.static('public'));
 app.use(require('cookie-parser') ());
 app.use(require('body-parser').urlencoded({ extended: true }));
@@ -22,10 +28,11 @@ app.use(require('express-session') ({
   }
  }));
 
+// Can i clean these up?
 app.use("/", userAuthentication.loginAPI);
 app.use("/", userAuthentication.registerAPI);
 app.use("/", postsAPI.getPosts);
-app.use("/", postsAPI.newPosts);
+app.use("/", postsAPI.newPosts); 
 
 app.get("/", (req, res, next) => {
   if (!req.session.userAuthenticated) {
@@ -61,8 +68,6 @@ app.get("/pp", (req, res, next) => {
   res.sendFile("/pages/public_profile.html", options, (err) => {
     if (err) {
       next(err);
-    } else {
-      console.log('Sent:', "public_profile.html");
     }
   })
 })
@@ -80,8 +85,6 @@ app.get("/pv", (req, res, next) => {
   res.sendFile("/pages/post_view.html", options, (err) => {
     if (err) {
       next(err);
-    } else {
-      console.log('Sent:', "public_profile.html");
     }
   })
 })

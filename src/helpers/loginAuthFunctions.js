@@ -5,8 +5,6 @@ const hashingFunctions = require("./hashing");
 const usersDatabase = new sqlite3.Database("./database/accounts.db");
 
 const userValidLogin = (usernameOrEmail, password, cb) => {
-  console.log(usernameOrEmail);
-
   usersDatabase.all("SELECT * FROM users WHERE username = ? OR email = ?", [usernameOrEmail, usernameOrEmail], (error, results) => {
 
     if (error)

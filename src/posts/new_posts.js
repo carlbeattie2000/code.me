@@ -11,8 +11,6 @@ newPostAPI.post("/new-post", (req, res) => {
   
   const postContent = req.body.content;
 
-  console.log(postContent);
-
   if (Object.values(postContent).length > 0) {
     newPostModel.uploadNewPost({
       postID: crypto.randomBytes(10).toString("hex"),

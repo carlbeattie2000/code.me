@@ -42,8 +42,6 @@ loginAuth.post("/login-auth", (req, res) => {
     req.session.user = status;
     req.session.userAuthenticated = true;
 
-    console.log(req.session);
-
     return res.send({login_response: "success", login_complete: true})
   });
 })
