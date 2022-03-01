@@ -24,16 +24,16 @@
   <main>
     <div class="user-profile">
       <div class="basic-profile-details">
-        <p class="username">Rick</p>
-        <p class="posts-count">430 posts</p>
+        <p class="username" id="top_banner_username"></p>
+        <p class="posts-count" id="top_banner_post_count"></p>
       </div>
 
       <div class="profile-banner">
-        <img src="../img/test/profile_banner_test.jpg" alt="profile-banner">
+        <img src="../img/test/profile_banner_test.jpg" id="profile_banner_image" alt="profile-banner">
       </div>
 
       <div class="profile-pic">
-        <img src="../img/test/profile-pic-test5.jpeg" alt="profile-pic">
+        <img src="" id="profile_image" alt="profile-pic">
       </div>
 
       <div class="profile-quick-actions">
@@ -42,110 +42,26 @@
       </div>
 
       <div class="profile-usernames">
-        <p class="profile-name">Rick Moldoean</p>
-        <p class="profile-username">:Rick</p>
+        <p class="profile-name" id="profile_name"></p>
+        <p class="profile-username" id="profile_username"></p>
       </div>
 
       <div class="profile-info">
-        <p>Food Activist</p>
+        <p id="profile_bio">Food Activist</p>
 
-        <p class="join-date"><i class="fa-solid fa-calendar-days"></i> Joined March 2020</p>
+        <p class="join-date"><i class="fa-solid fa-calendar-days"></i><span id="joined_date"></span></p>
       </div>
 
       <div class="followers-stats">
-        <p class="followers">1,300 <span class="grayed">Following</span></p>
-        <p class="followers">4,300 <span class="grayed">Followers</span></p>
+        <p class="followers"><span id="profile_followers"></span> <span class="grayed">Following</span></p>
+        <p class="followers"><span id="profile_following"></span> <span class="grayed">Followers</span></p>
       </div>
 
       <div class="posts-section-title">
         <h2>Posts</h2>
       </div>
 
-      <div class="user-posts">
-        <div class="post">
-          <div class="post-content-container">
-            <div class="post-top-level-content">
-              <div class="profile-image">
-                <img src="../img/test/profile-pic-test2.webp" alt="profile-pic">
-              </div>
-      
-              <div class="post-main-content">
-                <p class="username">:Status-6</p>
-                <h2 class="content">Ukraine's State Border Guard informed that Russian forces have captured the Zmiinyi Island in the Black Sea.</h2>
-              </div>
-            </div>
-    
-            <div class="post-action-buttons">
-              <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
-              <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
-              <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="post">
-          <div class="post-content-container">
-            <div class="post-top-level-content">
-              <div class="profile-image">
-                <img src="../img/test/profile-pic-test2.webp" alt="profile-pic">
-              </div>
-      
-              <div class="post-main-content">
-                <p class="username">:Status-6</p>
-                <h2 class="content">Ukraine's State Border Guard informed that Russian forces have captured the Zmiinyi Island in the Black Sea.</h2>
-              </div>
-            </div>
-    
-            <div class="post-action-buttons">
-              <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
-              <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
-              <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="post">
-          <div class="post-content-container">
-            <div class="post-top-level-content">
-              <div class="profile-image">
-                <img src="../img/test/profile-pic-test2.webp" alt="profile-pic">
-              </div>
-      
-              <div class="post-main-content">
-                <p class="username">:Status-6</p>
-                <h2 class="content">Ukraine's State Border Guard informed that Russian forces have captured the Zmiinyi Island in the Black Sea.</h2>
-              </div>
-            </div>
-    
-            <div class="post-action-buttons">
-              <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
-              <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
-              <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="post">
-          <div class="post-content-container">
-            <div class="post-top-level-content">
-              <div class="profile-image">
-                <img src="../img/test/profile-pic-test2.webp" alt="profile-pic">
-              </div>
-      
-              <div class="post-main-content">
-                <p class="username">:Status-6</p>
-                <h2 class="content">Ukraine's State Border Guard informed that Russian forces have captured the Zmiinyi Island in the Black Sea.</h2>
-              </div>
-            </div>
-    
-            <div class="post-action-buttons">
-              <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i></button>
-              <button id="post_action_like"><i class="fa-solid fa-heart fa-lg"></i></i></button>
-              <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="user-posts" id="profile_posts"></div>
 
     </div>
   </main>
@@ -190,5 +106,6 @@
 
   <!-- <footer></footer> -->
   <script src="../js/home_feed/textarea_autorezise.js"></script>
+  <script src="../js/profile/load_profile.js"></script>
 </body>
 </html>

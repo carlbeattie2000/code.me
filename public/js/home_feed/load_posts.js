@@ -62,7 +62,7 @@ const secondsToFormattedTime = (secondsToConvert) => {
   }
 
   if (secondsToConvert < 86400) {
-    return Math.floor(secondsToConvert / 3600) + "hr";
+    return Math.floor(secondsToConvert / 3600) + "h";
   }
 
   if (secondsToConvert < 604800) {
@@ -73,8 +73,6 @@ const secondsToFormattedTime = (secondsToConvert) => {
 const createNewPostDiv = (post) => {
   const timeSincePosted = (Date.now() / 1000) - post.date_posted;
   let likedButtonClass = "";
-
-  console.log(post);
 
   if (post.likedPost) {
     likedButtonClass = "liked_active";

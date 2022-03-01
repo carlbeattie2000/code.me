@@ -38,8 +38,6 @@ main .user-profile .profile-banner img {
 }
 
 main .user-profile .profile-pic {
-  top: 27%;
-  left: 22%;
   overflow: visible;
   margin-top: -5em;
   margin-left: 2em;
@@ -50,6 +48,8 @@ main .user-profile .profile-pic img {
   height: 160px;
   border-radius: 100%;
   border: 3px solid #000;
+  background: #292929;
+  color: #FFF;
 }
 
 main .user-profile .profile-quick-actions {
@@ -135,6 +135,10 @@ main .user-profile .profile-info p {
   color: #FFF;
 }
 
+main .user-profile .profile-info p span {
+  margin: 0 .5em;
+}
+
 main .user-profile .followers-stats {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,6 +194,7 @@ main .user-profile .user-posts .post .post-content-container {
 }
 
 main .user-profile .user-posts .post .post-content-container .post-top-level-content {
+  width: 100%;
   margin: 1em 0;
   display: -ms-grid;
   display: grid;
@@ -210,6 +215,10 @@ main .user-profile .user-posts .post .post-content-container .post-top-level-con
      object-fit: cover;
 }
 
+main .user-profile .user-posts .post .post-content-container .post-top-level-content .post-main-content {
+  width: 100%;
+}
+
 main .user-profile .user-posts .post .post-content-container .post-top-level-content .post-main-content .username {
   font-weight: bold;
   color: #FFF;
@@ -228,6 +237,9 @@ main .user-profile .user-posts .post .post-content-container .post-top-level-con
   /* Internet Explorer 10+ */
   scrollbar-width: none;
   /* Firefox */
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / 5;
 }
 
 main .user-profile .user-posts .post .post-content-container .post-top-level-content .post-main-content .content::-webkit-scrollbar {
@@ -256,8 +268,24 @@ main .user-profile .user-posts .post .post-content-container .post-action-button
   transition: color .3s ease-in-out;
 }
 
+main .user-profile .user-posts .post .post-content-container .post-action-buttons button span {
+  margin: 0 .5em;
+}
+
 main .user-profile .user-posts .post .post-content-container .post-action-buttons button:hover {
   color: #BB86FC;
+}
+
+main .user-profile .user-posts .post .post-content-container .post-action-buttons .liked_active {
+  color: #BB86FC;
+}
+
+main .user-profile .user-posts .post .post-content-container .post-action-buttons .liked_active:hover {
+  color: #fff;
+}
+
+main .user-profile .user-posts .post .post-content-container .post-action-buttons .uploadTime {
+  color: #fff;
 }
 
 main .user-profile .user-posts .post:hover {

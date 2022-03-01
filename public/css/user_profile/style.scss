@@ -33,17 +33,16 @@ main {
     }
 
     .profile-pic {
-      top: 27%;
-      left: 22%;
       overflow: visible;
       margin-top: -5em;
       margin-left: 2em;
-      
       img {
         width: 160px;
         height: 160px;
         border-radius: 100%;
         border: 3px solid #000;
+        background:rgb(41, 41, 41);
+        color: #FFF;
       }
     }
 
@@ -112,6 +111,9 @@ main {
       column-gap: 15px;
       p {
         color: #FFF;
+        span {
+          margin: 0 .5em;
+        }
       }
     }
 
@@ -151,6 +153,7 @@ main {
           width: 100%;
           flex-direction: column;
           .post-top-level-content {
+            width: 100%;
             margin: 1em 0;
             display: grid;
             grid-template-columns: 1fr 4fr;
@@ -165,6 +168,7 @@ main {
             }
 
             .post-main-content {
+              width: 100%;
               .username {
                 font-weight: bold;
                 color: #FFF;
@@ -180,6 +184,7 @@ main {
                 width: 100%;
                 -ms-overflow-style: none;  /* Internet Explorer 10+ */
                 scrollbar-width: none;  /* Firefox */
+                grid-column: 1 / 5;
               }
 
               .content::-webkit-scrollbar { 
@@ -199,10 +204,25 @@ main {
               width: 100px;
               cursor: pointer;
               transition: color .3s ease-in-out;
+              span {
+                margin: 0 .5em;
+              }
             }
 
             button:hover {
               color: #BB86FC;
+            }
+
+            .liked_active {
+              color: #BB86FC;
+            }
+
+            .liked_active:hover {
+              color: #fff;
+            }
+
+            .uploadTime {
+              color: #fff;
             }
           }
         }

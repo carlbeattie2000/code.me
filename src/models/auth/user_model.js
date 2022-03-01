@@ -95,6 +95,22 @@ const getUserById = async (user_id) => {
   return user
 }
 
+const getUserByIdOrUsername = async (userQuery) => {
+  const user = Users.findAll(
+    {
+      attributes: ["user_id", "name", "username", "profilePicPath", "created_at"],
+      where: {
+        [Op.or]: [
+          { user_id: userQuery },
+          { username: userQuery }
+        ]
+      }
+    }
+  )
+
+  return user
+}
+
 const validUserLogin = async (username_or_email, password) => {
   const user = await Users.findAll(
     {
@@ -132,6 +148,7 @@ module.exports = {
   createUsersTable,
   createNewUser,
   getUserById,
+  getUserByIdOrUsername,
   validUserLogin,
   userWithEmailAlreadyExists
 }
