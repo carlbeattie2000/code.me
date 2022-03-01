@@ -45,12 +45,19 @@ postsAPI.get("/recent-posts", (req, res) => {
 })
 
 postsAPI.get("/like-post", (req, res) => {
+  if (!req.session.userAuthenticated) {
+    return res.sendStatus(401);
+  }
+
   const post_id = req.query.post_id;
 
   postLikesModel.matchPostIdAndUserId(post_id, req.session.user.user_id)
     .then((result) => {
       if (result.length > 0) {
-        return res.status(401);
+        postLikesModel.unlikePost(post_id, req.session.user.user_id)
+          .then(res.status(200));
+        
+        return
       }
 
       postLikesModel.createNewLikedPost(post_id, req.session.user.user_id)

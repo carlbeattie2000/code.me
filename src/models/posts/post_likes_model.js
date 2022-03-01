@@ -42,6 +42,19 @@ const createNewLikedPost = async (post_id, liker_id) => {
   newLike.save();
 }
 
+const unlikePost = async (post_id, liker_id) => {
+  await Likes.destroy(
+    {
+      where: {
+        [Op.and]: [
+          { post_id },
+          { liker_id }
+        ]
+      }
+    }
+  )
+}
+
 const findLikesByPostId = async(post_id) => {
   const likes = await Likes.findAll(
     {
@@ -84,6 +97,7 @@ const matchPostIdAndUserId = async (post_id, liker_id) => {
 module.exports = {
   createLikesTable,
   createNewLikedPost,
+  unlikePost,
   findLikesByPostId,
   findLikesByUserId,
   matchPostIdAndUserId
