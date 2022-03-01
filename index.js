@@ -1,7 +1,7 @@
 // TODO: 
-// 1. When user has already liked a post and clicks the like button, unlike that post -- WORKING ON
+// 1. When user has already liked a post and clicks the like button, unlike that post -->  DONE
 // 2. Show the if the user has already liked a post --> DONE
-// 3. User profile
+// 3. User profile -- WORKING
 // 4. Post page, with comments
 // 5. Move to frontend framework
 
@@ -13,6 +13,7 @@ const app = express();
 
 const usersAPI = require("./src/routes/userAuth/users_api");
 const postsAPI = require("./src/routes/posts/posts_api");
+const profileAPI = require("./src/routes/profile/profile_api");
 
 app.use(express.static('public'));
 app.use(require('cookie-parser') ());
@@ -25,9 +26,10 @@ app.use(require('express-session') ({
     maxAge: 1000*60*60*24
   }
  }));
- 
+
 app.use("/", postsAPI);
 app.use("/", usersAPI);
+app.use("/", profileAPI);
 
 app.get("/", (req, res, next) => {
   if (!req.session.userAuthenticated) {
