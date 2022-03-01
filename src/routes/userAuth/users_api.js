@@ -6,10 +6,12 @@ const usersAPI = express.Router();
 usersAPI.use(express.json());
 
 const usersModel = require("../../models/auth/user_model");
+const followersModel = require("../../models/auth/user_following_model");
 const registerTools = require("../../helpers/register_valid_data");
 const imageUploadTools = require("../../helpers/upload_image");
 
 usersModel.createUsersTable();
+followersModel.createFollowersTable();
 
 usersAPI.get("/login", (req, res) => {
   if (req.session.userAuthenticated) return res.redirect("/");
