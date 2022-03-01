@@ -1,6 +1,6 @@
 // TODO: 
-// 1. When user has already liked a post and clicks the like button, unlike that post
-// 2. Show the if the user has already liked a post
+// 1. When user has already liked a post and clicks the like button, unlike that post -- WORKING ON
+// 2. Show the if the user has already liked a post --> DONE
 // 3. User profile
 // 4. Post page, with comments
 // 5. Move to frontend framework
@@ -25,8 +25,7 @@ app.use(require('express-session') ({
     maxAge: 1000*60*60*24
   }
  }));
-
-// Can i clean these up?
+ 
 app.use("/", postsAPI);
 app.use("/", usersAPI);
 

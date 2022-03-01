@@ -21,6 +21,14 @@ const getPostsFromServer = async () => {
     const username = await getPostersDetails(res.posters_id).then((user) => {
       res.username = user.username;
       res.profileImage = user.profilePicPath;
+
+      const hasLikedPost = getHasLikedPost(res.post_id).then((post_matched_liked) => {
+        if (post_matched_liked.liked_post) {
+          res.likedPost = true
+        } else {
+          res.likedPost = false;
+        }
+      })
     })
   }
 
@@ -35,6 +43,15 @@ const getPostersDetails = async (postersID) => {
   return response
 }
 
+const getHasLikedPost = async (post_id) => {
+  const url = "http://192.168.0.3:4001/has-liked-post?post_id="+post_id;
+
+  const request = await fetch(url);
+  const response = await request.json();
+
+  return response;
+}
+
 const secondsToFormattedTime = (secondsToConvert) => {
   if (secondsToConvert < 60) {
     return Math.floor(secondsToConvert) + "s";
@@ -47,10 +64,21 @@ const secondsToFormattedTime = (secondsToConvert) => {
   if (secondsToConvert < 86400) {
     return Math.floor(secondsToConvert / 3600) + "hr";
   }
+
+  if (secondsToConvert < 604800) {
+    return Math.floor(secondsToConvert / 86400) + "d";
+  }
 }
 
 const createNewPostDiv = (post) => {
   const timeSincePosted = (Date.now() / 1000) - post.date_posted;
+  let likedButtonClass = "";
+
+  console.log(post);
+
+  if (post.likedPost) {
+    likedButtonClass = "liked_active";
+  }
 
   const div = `
     <div class="post">
@@ -69,7 +97,7 @@ const createNewPostDiv = (post) => {
 
         <div class="post-action-buttons">
           <button id="post_action_comment"><i class="fa-solid fa-comment fa-lg"></i><span>${post.comments_count}</span></button>
-          <button class="post_action_like" value="${post.post_id}"><i class="fa-solid fa-heart fa-lg"></i></i><span>${post.likes}</span></button>
+          <button class="post_action_like ${likedButtonClass}" value="${post.post_id}"><i class="fa-solid fa-heart fa-lg"></i></i><span>${post.likes}</span></button>
           <button id="post_action_share"><i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i></button>
         </div>
       </div>

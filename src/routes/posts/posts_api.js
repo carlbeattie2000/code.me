@@ -45,19 +45,38 @@ postsAPI.get("/recent-posts", (req, res) => {
 })
 
 postsAPI.get("/like-post", (req, res) => {
-  postLikesModel.matchPostIdAndUserId(req.query.post_id, req.session.user.user_id)
+  const post_id = req.query.post_id;
+
+  postLikesModel.matchPostIdAndUserId(post_id, req.session.user.user_id)
     .then((result) => {
       if (result.length > 0) {
         return res.status(401);
       }
 
-      postLikesModel.createNewLikedPost(req.query.post_id, req.session.user.user_id)
+      postLikesModel.createNewLikedPost(post_id, req.session.user.user_id)
         .then(() => {
-          postsModel.updatePostsLikeCount(req.query.post_id)
+          postsModel.updatePostsLikeCount(post_id)
             .then(() => {
               res.status(200);
             })
         });
+    })
+})
+
+postsAPI.get("/has-liked-post", (req, res) => {
+  if (!req.session.userAuthenticated) {
+    return res.sendStatus(401);
+  }
+  
+  const post_id = req.query.post_id;
+
+  postLikesModel.matchPostIdAndUserId(post_id, req.session.user.user_id)
+    .then((results) => {
+      if (results.length > 0) {
+        return res.send({liked_post: true})
+      }
+
+      return res.send({liked_post: false})
     })
 })
 

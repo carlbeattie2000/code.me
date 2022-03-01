@@ -294,6 +294,14 @@
   color: #BB86FC;
 }
 
+.home-feed main .recent-posts .post .post-content-container .post-action-buttons .liked_active {
+  color: #b795e0;
+}
+
+.home-feed main .recent-posts .post .post-content-container .post-action-buttons .liked_active:hover {
+  color: #fff;
+}
+
 .home-feed main .recent-posts .post:hover {
   background-color: #252525;
 }
