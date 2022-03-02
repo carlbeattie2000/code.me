@@ -1,7 +1,7 @@
 // TODO: 
 // 1. When user has already liked a post and clicks the like button, unlike that post -->  DONE
 // 2. Show the if the user has already liked a post --> DONE
-// 3. User profile -- WORKING
+// 3. User profile --> DONE
 // 4. Post page, with comments
 // 5. Move to frontend framework
 

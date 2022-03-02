@@ -75,10 +75,21 @@ const getAccountFollowingAmount = async (user_id) => {
   return userFollowingList.length;
 }
 
+const getUsersFollowingList = async (user_id) => {
+  const userFollowingList = await Followers.findAll({
+    where: {
+      follower_id: user_id,
+    }
+  })
+
+  return userFollowingList;
+}
+
 module.exports = {
   createFollowersTable,
   followUser,
   unFollowUser,
   getAccountFollowersAmount,
-  getAccountFollowingAmount
+  getAccountFollowingAmount,
+  getUsersFollowingList
 }

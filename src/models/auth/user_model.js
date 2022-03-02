@@ -124,12 +124,14 @@ const validUserLogin = async (username_or_email, password) => {
   )
 
   if (user.length > 0) {
-    if (passwordTools.hashStringWithCustomSalt(password, user[0].dataValues.passwordSalt) == user.password) {
+    const hashedPassword = passwordTools.hashStringWithCustomSalt(password, user[0].dataValues.passwordSalt);
+
+    if (hashedPassword == user[0].dataValues.password) {
       return user
     }
   }
 
-  return user
+  return false
 }
 
 const userWithEmailAlreadyExists = async (email) => {
